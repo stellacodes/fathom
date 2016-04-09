@@ -4,6 +4,7 @@ require "yaml"
 require "active_record"
 require "active_support/all"
 require "bundler/setup"
+require "open-uri"
 
 ::Bundler.setup
 ::Bundler.require(*[:default, :development, :test])
