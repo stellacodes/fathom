@@ -18,12 +18,13 @@ dbconfig = YAML.load(db_config_result)
 
 ::ActiveRecord::Base.establish_connection dbconfig[environment]
 
-require_all "lib"
-
-::Time.zone = "UTC"
-
 module Fathom
   def self.root
     @root ||= ::Pathname.new(::File.expand_path("../..", __FILE__))
   end
 end
+
+require File.join(Fathom.root, 'lib/service_objects/service_object')
+require_all "lib"
+
+::Time.zone = "UTC"
