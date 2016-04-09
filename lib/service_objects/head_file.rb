@@ -5,7 +5,7 @@ module Fathom
 
     attr_reader :filename, :opts
 
-    def initialize(filename, opts={})
+    def initialize(filename, opts = {})
       @filename = filename
       @opts = opts.with_indifferent_access
     end
@@ -15,13 +15,13 @@ module Fathom
     end
 
     def lines
-      @lines ||= File
+      @lines ||= ::File
         .foreach(filename)
         .first(n)
     end
 
     def call
-      return lines
+      lines
     end
 
   end

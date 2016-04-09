@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class Fathom::HeadFileTest < ::ActiveSupport::TestCase
 
@@ -8,14 +8,14 @@ class Fathom::HeadFileTest < ::ActiveSupport::TestCase
 
   def test_interface
     assert_equal(filename, @subject.filename)
-    opts = {"foo" => :bar}
+    opts = { "foo" => :bar }
     @subject = ::Fathom::HeadFile.new(filename, opts)
     assert_equal(opts, @subject.opts)
   end
 
   def test_n
     assert_equal(::Fathom::HeadFile::DEFAULT_LINE_COUNT, @subject.n)
-    @subject = ::Fathom::HeadFile.new(filename, n: 42)
+    @subject = ::Fathom::HeadFile.new(filename, { :n => 42 })
     assert_equal(42, @subject.n)
   end
 
@@ -32,6 +32,6 @@ class Fathom::HeadFileTest < ::ActiveSupport::TestCase
   end
 
   def filename
-    @filename ||= Fathom.root.join('test/support/short.csv').to_s
+    @filename ||= Fathom.root.join("test/support/short.csv").to_s
   end
 end

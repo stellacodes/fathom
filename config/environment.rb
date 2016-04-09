@@ -24,7 +24,7 @@ module Fathom
   end
 end
 
-require File.join(Fathom.root, 'lib/service_objects/service_object')
+require File.join(Fathom.root, "lib/service_objects/service_object")
 require_all "lib"
 
 ::Time.zone = "UTC"
