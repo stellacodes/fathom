@@ -31,7 +31,4 @@ class Fathom::HeadFileTest < ::ActiveSupport::TestCase
     assert(@subject.call)
   end
 
-  def filename
-    @filename ||= Fathom.root.join("test/support/short.csv").to_s
-  end
 end
